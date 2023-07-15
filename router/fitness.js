@@ -24,30 +24,37 @@ const { unlink } = require('fs-extra');
         res.render("ingresar");
     });
 
-    router.post('/ingresar',async(req,res)=>{
-
+    router.post('/ingresar', async (req, res) => {
         const body = req.body;
         const file = req.file;
-
-        try{
-
-            const newejercicio = new ejercicios({
-                id: body.id,
-                nombre: body.nombre,
-                descripcion: body.descripcion,
-                link: body.link,
-                filename: file.filename,
-                path: '/uploads/' + file.filename,
-                originalname: file.originalname,
-                mimetype: file.mimetype,
-                size: file.size
-            });
-
-            newejercicio.save();
-            res.redirect(`ingresar`);
-        }catch(error){
-            console.log('error', error)
+      
+        try {
+          const musculos = req.body.musculos;
+          const musculosKeys = Object.keys(musculos);
+      
+          const musculosObj = {};
+          musculosKeys.forEach((key) => {
+            musculosObj[key] = 1; // Asignamos 1 a los músculos seleccionados
+          });
+      
+          const newejercicio = new ejercicios({
+            id: body.id,
+            nombre: body.nombre,
+            descripcion: body.descripcion,
+            link: body.link,
+            filename: file.filename,
+            path: '/uploads/' + file.filename,
+            originalname: file.originalname,
+            mimetype: file.mimetype,
+            size: file.size,
+            musculos: musculosObj
+          });
+      
+          newejercicio.save();
+          res.redirect('ingresar');
+        } catch (error) {
+          console.log('error', error);
         }
-    });
+      });
 
 module.exports = router;
