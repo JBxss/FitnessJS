@@ -1,2 +1,40 @@
-<%- include('templates/header',{tituloWeb:'Datos para jugar'}); %>
-      <%- include('templates/footer',{footerWeb: 'Footer pagina index'})%>
+<%- include('templates/header'); %>
+<body>
+    <div class="container">
+        <h1>Listado de Ejercicios</h1>
+        <h1>Listado de Ejercicios</h1>
+        <% if (arrayejercicios.length > 0) { %>
+        <div class="row">
+            <% let cardsPerRow = 3; // Número de tarjetas por fila %>
+            <% let count = 0; %>
+            <% arrayejercicios.forEach((ejercicio, index) => { %>
+            <% if (count === 0) { %>
+            <div class="col-lg-4 mb-4">
+                <% } else if (count % cardsPerRow === 0) { %>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <% } else { console.log(ejercicio) %>
+                <div class="col-lg-4 mb-4">
+                    <% } %>
+                    <div class="card">
+                        <img src="/uploads/<%= ejercicio.filename %>" class="card-img-top" alt="<%= ejercicio.filename %>">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= ejercicio.nombre %></h5>
+                            <p class="card-text"><%= ejercicio.descripcion %></p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="<%= ejercicio.link %>" class="btn btn-primary">Ver ejercicio</a>
+                        </div>
+                    </div>
+                </div>
+                <% count++; %>
+                <% }); %>
+            </div>
+            <% if (count % cardsPerRow !== 0) { %>
+        </div>
+        <% } %>
+        <% } %>
+    </div>
+</body>
+<%- include('templates/footer')%>

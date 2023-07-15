@@ -1,0 +1,28 @@
+<%- include('templates/header'); %>
+<div class="container">
+    <h1>Formulario de Ejercicios</h1>
+    <form action="/ingresar" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="id" class="form-label">ID</label>
+            <input type="number" class="form-control" id="id" name="id" required>
+        </div>
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" required>
+        </div>
+        <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripción</label>
+            <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="link" class="form-label">Link</label>
+            <textarea class="form-control" id="link" name="link" rows="3" required></textarea>
+        </div>
+        <div class="custom-file">
+            <input type="file" name="image" class="custom-file-input" id="inputGroupFile02">
+            <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+<%- include('templates/footer')%>
