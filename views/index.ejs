@@ -2,7 +2,6 @@
 <body>
     <div class="container">
         <h1>Listado de Ejercicios</h1>
-        <h1>Listado de Ejercicios</h1>
         <% if (arrayejercicios.length > 0) { %>
         <div class="row">
             <% let cardsPerRow = 3; // Número de tarjetas por fila %>
@@ -22,6 +21,13 @@
                         <div class="card-body">
                             <h5 class="card-title"><%= ejercicio.nombre %></h5>
                             <p class="card-text"><%= ejercicio.descripcion %></p>
+                            <% const musculosKeys = Object.keys(ejercicio.musculos); %>
+                            <% musculosKeys.forEach((musculo) => { %>
+                                <% if (ejercicio.musculos[musculo] === 1) { %>
+                                    <% const musculoSinGuion = musculo.replace(/_/g, ' '); %>
+                                    <span class="badge bg-secondary"><%= musculoSinGuion %></span>
+                                <% } %>
+                            <% }); %>
                         </div>
                         <div class="card-footer">
                             <a href="<%= ejercicio.link %>" class="btn btn-primary">Ver ejercicio</a>
