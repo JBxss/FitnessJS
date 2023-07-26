@@ -1,46 +1,63 @@
 <%- include('templates/header'); %>
 <body>
-    <div class="container mt-5"> 
-        <h1>Listado de Ejercicios</h1>
-        <% if (arrayejercicios.length > 0) { %>
-        <div class="row">
-            <% let cardsPerRow = 3; // Número de tarjetas por fila %>
-            <% let count = 0; %>
-            <% arrayejercicios.forEach((ejercicio, index) => { %>
-            <% if (count === 0) { %>
-            <div class="col-lg-4 mb-4">
-                <% } else if (count % cardsPerRow === 0) { %>
-            </div>
+
+    <!-- Clases Section Begin -->
+    <section class="classes-section spad">
+        <div class="container">
+
             <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <% } else { console.log(ejercicio) %>
-                <div class="col-lg-4 mb-4">
-                    <% } %>
-                    <div class="card">
-                        <img src="/uploads/<%= ejercicio.filename %>" class="card-img-top" alt="<%= ejercicio.filename %>">
-                        <div class="card-body">
-                            <h5 class="card-title"><%= ejercicio.nombre %></h5>
-                            <p class="card-text"><%= ejercicio.descripcion %></p>
-                            <% const musculosKeys = Object.keys(ejercicio.musculos); %>
-                            <% musculosKeys.forEach((musculo) => { %>
-                                <% if (ejercicio.musculos[musculo] === 1) { %>
-                                    <% const musculoSinGuion = musculo.replace(/_/g, ' '); %>
-                                    <span class="badge bg-secondary"><%= musculoSinGuion %></span>
-                                <% } %>
-                            <% }); %>
-                        </div>
-                        <div class="card-footer">
-                            <a href="<%= ejercicio.link %>" class="btn btn-primary" target="_blank">Ver ejercicio</a> 
-                        </div>
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <span>Nuestras Clases</span>
+                        <h2 id="title" >Listado de Ejercicios</h2>
                     </div>
                 </div>
-                <% count++; %>
-                <% }); %>
             </div>
-            <% if (count % cardsPerRow !== 0) { %>
+
+            <% if (arrayejercicios.length > 0) { %>
+                <div class="row">
+                    <% let cardsPerRow = 3; // Número de tarjetas por fila %>
+                    <% let count = 0; %>
+                    <% arrayejercicios.forEach((ejercicio, index) => { %>
+                    <% if (count === 0) { %>
+                    <div class="col-lg-4 col-md-6">
+                        <% } else if (count % cardsPerRow === 0) { %>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                            <% } else { console.log(ejercicio) %>
+                        <div class="col-lg-4 col-md-6">
+                            <% } %>
+                            <div class="class-item">
+                                <div class="ci-pic">
+                                    <img src="/uploads/<%= ejercicio.filename %>" class="card-img-top" alt="<%= ejercicio.filename %>">
+                                </div>
+                                <div class="ci-text">
+
+                                    <% const musculosKeys = Object.keys(ejercicio.musculos); %>
+                                    <% musculosKeys.forEach((musculo) => { %>
+                                        <% if (ejercicio.musculos[musculo] === 1) { %>
+                                            <% const musculoSinGuion = musculo.replace(/_/g, ' '); %>
+                                            <span><%= musculoSinGuion %></span>
+                                        <% } %>
+                                    <% }); %>
+                                    <h5><%= ejercicio.nombre %></h5>
+                                    <p class="card-text"><%= ejercicio.descripcion %></p>
+                                    <a href="<%= ejercicio.link %>"><i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <% count++; %>
+                        <% }); %>
+                    </div>
+                    <% if (count % cardsPerRow !== 0) { %>
+                </div>
+                <% } %>
+                <% } %>
+
         </div>
-        <% } %>
-        <% } %>
-    </div>
-</body>
+    </section>
+    <!-- Clases Section End -->
+
+<%- include('templates/toggleTheme')%>
 <%- include('templates/footer')%>
