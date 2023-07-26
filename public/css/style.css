@@ -1,15 +1,16 @@
 
 /*----------------------------------------*/
 
-/* Template default CSS
-/*----------------------------------------*/
-
 html,
 body {
 	height: 100%;
 	font-family: "Muli", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
+	-webkit-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
 }
 
 h1,
@@ -68,6 +69,10 @@ textarea:focus {
 	outline: none;
 }
 
+a {
+	text-decoration: none;
+}
+
 a:hover,
 a:focus {
 	text-decoration: none;
@@ -98,7 +103,7 @@ ol {
 }
 
 .section-title h2 {
-	color: #ffffff;
+	color: black;
 	font-size: 32px;
 	font-weight: 600;
 	text-transform: uppercase;
@@ -135,6 +140,25 @@ ol {
 }
 
 /* buttons */
+
+.bt-primary{
+	background: #f7e02a;
+	color: black;
+	-webkit-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+}
+
+.bt-primary:hover{
+	border: 1px solid #f7e02a;
+	color: #f7e02a;
+	-webkit-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+}
+
 
 .primary-btn {
 	display: inline-block;
