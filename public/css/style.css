@@ -66,7 +66,14 @@ input:focus,
 select:focus,
 button:focus,
 textarea:focus {
-	outline: none;
+	outline: none; 
+}
+
+input,
+select,
+button,
+textarea {
+	caret-color: #f7e02a;
 }
 
 a {
@@ -1967,7 +1974,7 @@ ol {
 -------------------------*/
 
 .bmi-calculator-section {
-	background: #151515;
+	background: transparent;
 }
 
 .section-title.chart-title {
@@ -1981,6 +1988,10 @@ ol {
 
 .chart-table table thead {
 	border-bottom: 1px solid #363636;
+}
+
+.form-check label {
+	padding-left: 10px;
 }
 
 .chart-table table thead tr th {
@@ -2017,7 +2028,7 @@ ol {
 	margin-bottom: 24px;
 }
 
-.chart-calculate-form form input {
+form input {
 	font-size: 14px;
 	color: #c4c4c4;
 	width: 100%;
@@ -2029,29 +2040,74 @@ ol {
 	margin-bottom: 20px;
 }
 
-.chart-calculate-form form input::-webkit-input-placeholder {
-	color: #c4c4c4;
+input[type="checkbox"]:checked {
+	background-color: #f7e02a;
+	color: black;
 }
 
-.chart-calculate-form form input::-moz-placeholder {
-	color: #c4c4c4;
+input[type="checkbox"] {
+	border: 1px solid #363636;
 }
 
-.chart-calculate-form form input:-ms-input-placeholder {
-	color: #c4c4c4;
-}
-
-.chart-calculate-form form input::-ms-input-placeholder {
-	color: #c4c4c4;
-}
-
-.chart-calculate-form form input::placeholder {
-	color: #c4c4c4;
-}
-
-.chart-calculate-form form button {
+ form textarea {
 	font-size: 14px;
-	color: #ffffff;
+	color: #c4c4c4;
+	width: 100%;
+	height: 50px;
+	border: 1px solid #363636;
+	padding-left: 20px;
+	padding-right: 5px;
+	background: transparent;
+	margin-bottom: 20px;
+}
+
+.custom-file-input {
+	padding-top: 10px;
+}
+
+ form textarea::-webkit-input-placeholder {
+	color: #c4c4c4;
+}
+
+ form textarea::-moz-placeholder {
+	color: #c4c4c4;
+}
+
+ form textarea:-ms-input-placeholder {
+	color: #c4c4c4;
+}
+
+ form textarea::-ms-input-placeholder {
+	color: #c4c4c4;
+}
+
+ form textarea::placeholder {
+	color: #c4c4c4;
+}
+
+ form input::-webkit-input-placeholder {
+	color: #c4c4c4;
+}
+
+ form input::-moz-placeholder {
+	color: #c4c4c4;
+}
+
+ form input:-ms-input-placeholder {
+	color: #c4c4c4;
+}
+
+ form input::-ms-input-placeholder {
+	color: #c4c4c4;
+}
+
+ form input::placeholder {
+	color: #c4c4c4;
+}
+
+ form button {
+	font-size: 14px;
+	color: black;
 	text-transform: uppercase;
 	font-weight: 700;
 	width: 100%;
@@ -3252,4 +3308,8 @@ ol {
 	.search-model-form input {
 		font-size: 28px;
 	}
+}
+
+label {
+	color: #c4c4c4;
 }

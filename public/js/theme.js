@@ -3,18 +3,23 @@ var isDarkMode = localStorage.getItem("isDarkMode") === "true"; // Obtiene el va
 
 function setDarkMode() {
   var body = document.querySelector("body");
+  var title = document.getElementsByClassName("title-change");
   var icon = document.getElementById("icon");
 
   if (isDarkMode) {
     // Cambiar fondo a negro
     body.style.backgroundColor = "#212529";
-    title.style.color = "white";
+    for (var i = 0; i < title.length; i++) {
+      title[i].style.color = "white";
+    }
     icon.classList.remove("fa-toggle-on");
     icon.classList.add("fa-toggle-off");
   } else {
     // Cambiar fondo a blanco
     body.style.backgroundColor = "white";
-    title.style.color = "black";
+    for (var i = 0; i < title.length; i++) {
+      title[i].style.color = "black";
+    }
     icon.classList.remove("fa-toggle-off");
     icon.classList.add("fa-toggle-on");
   }

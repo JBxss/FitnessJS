@@ -1,207 +1,250 @@
 <%- include('templates/header'); %>
-<div class="container">
-    <h1>Formulario de Ejercicios</h1>
-    <form action="/ingresar" method="POST" enctype="multipart/form-data">
-        <div class="mb-3">
-            <label for="id" class="form-label">ID</label>
-            <input type="number" class="form-control" id="id" name="id" required>
+
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section set-bg" data-setbg="img/background.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb-text">
+                    <h2>Formulario de Ejercicios</h2>
+                    <div class="bt-option">
+                        <a href="/">Home</a>
+                        <a href="#">Paginas</a>
+                        <span>Ingresar</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" required>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<!-- BMI Calculator Section Begin -->
+<section class="bmi-calculator-section spad">
+    <div class="container">
+        <form action="/ingresar" method="POST" enctype="multipart/form-data">
+        <div class="row">
+            
+            <div class="col-lg-6">
+                <div class="section-title chart-title">
+                    <span>diseña tu propio ejercicio </span>
+                    <h2 class="title-change">Con que musculos trabajaras?</h2>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="deltoides" name="musculos[deltoides]" value="1">
+                        <label class="form-check-label" for="deltoides">Deltoides</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="pectoral" name="musculos[pectoral]" value="1">
+                        <label class="form-check-label" for="pectoral">Pectoral</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="biceps_braquial" name="musculos[biceps_braquial]" value="1">
+                        <label class="form-check-label" for="biceps_braquial">Bíceps braquial</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="biceps_femoral" name="musculos[biceps_femoral]" value="1">
+                        <label class="form-check-label" for="biceps_femoral">Bíceps femoral</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="triceps_braquial" name="musculos[triceps_braquial]" value="1">
+                        <label class="form-check-label" for="triceps_braquial">Tríceps braquial</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="aductores" name="musculos[aductores]" value="1">
+                        <label class="form-check-label" for="aductores">Aductores</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="dorsal_ancho" name="musculos[dorsal_ancho]" value="1">
+                        <label class="form-check-label" for="dorsal_ancho">Dorsal ancho</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="masa_comun_extensores_columna" name="musculos[masa_comun_extensores_columna]" value="1">
+                        <label class="form-check-label" for="masa_comun_extensores_columna">Extensores de columna</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="cuadrado_lumbar" name="musculos[cuadrado_lumbar]" value="1">
+                        <label class="form-check-label" for="cuadrado_lumbar">Cuadrado lumbar</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="recto_femoral" name="musculos[recto_femoral]" value="1">
+                        <label class="form-check-label" for="recto_femoral">Recto femoral</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="basto_interno" name="musculos[basto_interno]" value="1">
+                        <label class="form-check-label" for="basto_interno">Bastó interno</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="basto_exterior" name="musculos[basto_exterior]" value="1">
+                        <label class="form-check-label" for="basto_exterior">Bastó exterior</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="basto_intermedio" name="musculos[basto_intermedio]" value="1">
+                        <label class="form-check-label" for="basto_intermedio">Bastó intermedio</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="tensor_fascia_lata" name="musculos[tensor_fascia_lata]" value="1">
+                        <label class="form-check-label" for="tensor_fascia_lata">Tensor de fascia lata</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="gluteo_mayor" name="musculos[gluteo_mayor]" value="1">
+                        <label class="form-check-label" for="gluteo_mayor">Glúteo mayor</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="gluteo_medio" name="musculos[gluteo_medio]" value="1">
+                        <label class="form-check-label" for="gluteo_medio">Glúteo medio</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="gluteo_menor" name="musculos[gluteo_menor]" value="1">
+                        <label class="form-check-label" for="gluteo_menor">Glúteo menor</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="piriforme" name="musculos[piriforme]" value="1">
+                        <label class="form-check-label" for="piriforme">Piriforme</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="gastrocnemio" name="musculos[gastrocnemio]" value="1">
+                        <label class="form-check-label" for="gastrocnemio">Gastrocnemio</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="soleo" name="musculos[soleo]" value="1">
+                        <label class="form-check-label" for="soleo">Soleo</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="tibial_anterior" name="musculos[tibial_anterior]" value="1">
+                        <label class="form-check-label" for="tibial_anterior">Tibial anterior</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="tibial_posterior" name="musculos[tibial_posterior]" value="1">
+                        <label class="form-check-label" for="tibial_posterior">Tibial posterior</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="recto_abdominal" name="musculos[recto_abdominal]" value="1">
+                        <label class="form-check-label" for="recto_abdominal">Recto abdominal</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="transverso_abdomen" name="musculos[transverso_abdomen]" value="1">
+                        <label class="form-check-label" for="transverso_abdomen">Transverso del abdomen</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="oblicuo_externo" name="musculos[oblicuo_externo]" value="1">
+                        <label class="form-check-label" for="oblicuo_externo">Oblicuo externo</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="oblicuo_interno" name="musculos[oblicuo_interno]" value="1">
+                        <label class="form-check-label" for="oblicuo_interno">Oblicuo interno</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="supraespinoso" name="musculos[supraespinoso]" value="1">
+                        <label class="form-check-label" for="supraespinoso">Supraespinoso</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="serrato_anterior" name="musculos[serrato_anterior]" value="1">
+                        <label class="form-check-label" for="serrato_anterior">Serrato anterior</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="subescapular" name="musculos[subescapular]" value="1">
+                        <label class="form-check-label" for="subescapular">Subescapular</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="redondo_menor" name="musculos[redondo_menor]" value="1">
+                        <label class="form-check-label" for="redondo_menor">Redondo menor</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="redondo_mayor" name="musculos[redondo_mayor]" value="1">
+                        <label class="form-check-label" for="redondo_mayor">Redondo mayor</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="infraespinoso" name="musculos[infraespinoso]" value="1">
+                        <label class="form-check-label" for="infraespinoso">Infraespinoso</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="romboides_mayor" name="musculos[romboides_mayor]" value="1">
+                        <label class="form-check-label" for="romboides_mayor">Romboides mayor</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="romboides_menor" name="musculos[romboides_menor]" value="1">
+                        <label class="form-check-label" for="romboides_menor">Romboides menor</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="trapecio" name="musculos[trapecio]" value="1">
+                        <label class="form-check-label" for="trapecio">Trapecio</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="pectoral_menor" name="musculos[pectoral_menor]" value="1">
+                        <label class="form-check-label" for="pectoral_menor">Pectoral menor</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="braquial_radial" name="musculos[braquial_radial]" value="1">
+                        <label class="form-check-label" for="braquial_radial">Braquial Radial</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="musculos_epicondileos_mediales" name="musculos[musculos_epicondileos_mediales]" value="1">
+                        <label class="form-check-label" for="musculos_epicondileos_mediales">Músculos epicondileos mediales</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="musculos_epicondileos_laterales" name="musculos[musculos_epicondileos_laterales]" value="1">
+                        <label class="form-check-label" for="musculos_epicondileos_laterales">Músculos epicondileos laterales</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="semitendinoso" name="musculos[semitendinoso]" value="1">
+                        <label class="form-check-label" for="semitendinoso">Semitendinoso</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="semimembranoso" name="musculos[semimembranoso]" value="1">
+                        <label class="form-check-label" for="semimembranoso">Semimembranoso</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="multifidos_lumbares" name="musculos[multifidos_lumbares]" value="1">
+                        <label class="form-check-label" for="multifidos_lumbares">Multfidos lumbares</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="gracil" name="musculos[gracil]" value="1">
+                        <label class="form-check-label" for="gracil">Grácil</label>
+                    </div>
+                    <div class="col-sm-6 mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="sartorio" name="musculos[sartorio]" value="1">
+                        <label class="form-check-label" for="sartorio">Sartorio</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="section-title chart-calculate-title">
+                    <span>diseña tu propio ejercicio</span>
+                    <h2 class="title-change">Llena los requisitos</h2>
+                </div>
+                <div class="chart-calculate-form">
+                    <p>¡Deja volar tu imaginación y comparte tus ideas con la comunidad fitness! Completa los campos requeridos, como el nombre del ejercicio, la descripción, categoría, duración y cualquier otra información relevante. Una vez que hayas terminado, presiona el botón "Crear Ejercicio" para compartir tu rutina con el mundo.</p>
+                    
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <input type="number" id="id" name="id" required placeholder="ID">
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" id="nombre" name="nombre" required placeholder="Nombre">
+                            </div>
+                            <div class="col-sm-6">
+                                <textarea id="descripcion" name="descripcion" rows="3" required placeholder="Descripción"></textarea>
+                            </div>
+                            <div class="col-sm-6">
+                                <textarea id="link" name="link" rows="3" required placeholder="Link"></textarea>
+                            </div>
+                            <div class="col-lg-12 custom-file">
+                                <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Escoge un archivo</label>
+                                <input type="file" name="image" class="custom-file-input" id="inputGroupFile02">
+                            </div>
+                            <div class="col-lg-12">
+                                <button type="submit">Enviar</button>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="descripcion" class="form-label">Descripción</label>
-            <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required></textarea>
-        </div>
-        <div class="mb-3">
-            <label for="link" class="form-label">Link</label>
-            <textarea class="form-control" id="link" name="link" rows="3" required></textarea>
-        </div>
-        <div class="custom-file">
-            <input type="file" name="image" class="custom-file-input" id="inputGroupFile02">
-            <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
-        </div>
-        
-        <h3>Músculos:</h3>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="deltoides" name="musculos[deltoides]" value="1">
-            <label class="form-check-label" for="deltoides">Deltoides</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="pectoral" name="musculos[pectoral]" value="1">
-            <label class="form-check-label" for="pectoral">Pectoral</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="biceps_braquial" name="musculos[biceps_braquial]" value="1">
-            <label class="form-check-label" for="biceps_braquial">Bíceps braquial</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="biceps_femoral" name="musculos[biceps_femoral]" value="1">
-            <label class="form-check-label" for="biceps_femoral">Bíceps femoral</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="triceps_braquial" name="musculos[triceps_braquial]" value="1">
-            <label class="form-check-label" for="triceps_braquial">Tríceps braquial</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="aductores" name="musculos[aductores]" value="1">
-            <label class="form-check-label" for="aductores">Aductores</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="dorsal_ancho" name="musculos[dorsal_ancho]" value="1">
-            <label class="form-check-label" for="dorsal_ancho">Dorsal ancho</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="masa_comun_extensores_columna" name="musculos[masa_comun_extensores_columna]" value="1">
-            <label class="form-check-label" for="masa_comun_extensores_columna">Masa común de extensores de columna</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="cuadrado_lumbar" name="musculos[cuadrado_lumbar]" value="1">
-            <label class="form-check-label" for="cuadrado_lumbar">Cuadrado lumbar</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="recto_femoral" name="musculos[recto_femoral]" value="1">
-            <label class="form-check-label" for="recto_femoral">Recto femoral</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="basto_interno" name="musculos[basto_interno]" value="1">
-            <label class="form-check-label" for="basto_interno">Bastó interno</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="basto_exterior" name="musculos[basto_exterior]" value="1">
-            <label class="form-check-label" for="basto_exterior">Bastó exterior</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="basto_intermedio" name="musculos[basto_intermedio]" value="1">
-            <label class="form-check-label" for="basto_intermedio">Bastó intermedio</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="tensor_fascia_lata" name="musculos[tensor_fascia_lata]" value="1">
-            <label class="form-check-label" for="tensor_fascia_lata">Tensor de fascia lata</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="gluteo_mayor" name="musculos[gluteo_mayor]" value="1">
-            <label class="form-check-label" for="gluteo_mayor">Glúteo mayor</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="gluteo_medio" name="musculos[gluteo_medio]" value="1">
-            <label class="form-check-label" for="gluteo_medio">Glúteo medio</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="gluteo_menor" name="musculos[gluteo_menor]" value="1">
-            <label class="form-check-label" for="gluteo_menor">Glúteo menor</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="piriforme" name="musculos[piriforme]" value="1">
-            <label class="form-check-label" for="piriforme">Piriforme</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="gastrocnemio" name="musculos[gastrocnemio]" value="1">
-            <label class="form-check-label" for="gastrocnemio">Gastrocnemio</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="soleo" name="musculos[soleo]" value="1">
-            <label class="form-check-label" for="soleo">Soleo</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="tibial_anterior" name="musculos[tibial_anterior]" value="1">
-            <label class="form-check-label" for="tibial_anterior">Tibial anterior</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="tibial_posterior" name="musculos[tibial_posterior]" value="1">
-            <label class="form-check-label" for="tibial_posterior">Tibial posterior</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="recto_abdominal" name="musculos[recto_abdominal]" value="1">
-            <label class="form-check-label" for="recto_abdominal">Recto abdominal</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="transverso_abdomen" name="musculos[transverso_abdomen]" value="1">
-            <label class="form-check-label" for="transverso_abdomen">Transverso del abdomen</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="oblicuo_externo" name="musculos[oblicuo_externo]" value="1">
-            <label class="form-check-label" for="oblicuo_externo">Oblicuo externo</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="oblicuo_interno" name="musculos[oblicuo_interno]" value="1">
-            <label class="form-check-label" for="oblicuo_interno">Oblicuo interno</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="supraespinoso" name="musculos[supraespinoso]" value="1">
-            <label class="form-check-label" for="supraespinoso">Supraespinoso</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="serrato_anterior" name="musculos[serrato_anterior]" value="1">
-            <label class="form-check-label" for="serrato_anterior">Serrato anterior</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="subescapular" name="musculos[subescapular]" value="1">
-            <label class="form-check-label" for="subescapular">Subescapular</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="redondo_menor" name="musculos[redondo_menor]" value="1">
-            <label class="form-check-label" for="redondo_menor">Redondo menor</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="redondo_mayor" name="musculos[redondo_mayor]" value="1">
-            <label class="form-check-label" for="redondo_mayor">Redondo mayor</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="infraespinoso" name="musculos[infraespinoso]" value="1">
-            <label class="form-check-label" for="infraespinoso">Infraespinoso</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="romboides_mayor" name="musculos[romboides_mayor]" value="1">
-            <label class="form-check-label" for="romboides_mayor">Romboides mayor</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="romboides_menor" name="musculos[romboides_menor]" value="1">
-            <label class="form-check-label" for="romboides_menor">Romboides menor</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="trapecio" name="musculos[trapecio]" value="1">
-            <label class="form-check-label" for="trapecio">Trapecio</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="pectoral_menor" name="musculos[pectoral_menor]" value="1">
-            <label class="form-check-label" for="pectoral_menor">Pectoral menor</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="braquial_radial" name="musculos[braquial_radial]" value="1">
-            <label class="form-check-label" for="braquial_radial">Braquial Radial</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="musculos_epicondileos_mediales" name="musculos[musculos_epicondileos_mediales]" value="1">
-            <label class="form-check-label" for="musculos_epicondileos_mediales">Músculos epicondileos mediales</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="musculos_epicondileos_laterales" name="musculos[musculos_epicondileos_laterales]" value="1">
-            <label class="form-check-label" for="musculos_epicondileos_laterales">Músculos epicondileos laterales</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="semitendinoso" name="musculos[semitendinoso]" value="1">
-            <label class="form-check-label" for="semitendinoso">Semitendinoso</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="semimembranoso" name="musculos[semimembranoso]" value="1">
-            <label class="form-check-label" for="semimembranoso">Semimembranoso</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="multifidos_lumbares" name="musculos[multifidos_lumbares]" value="1">
-            <label class="form-check-label" for="multifidos_lumbares">Multfidos lumbares</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="gracil" name="musculos[gracil]" value="1">
-            <label class="form-check-label" for="gracil">Grácil</label>
-        </div>
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="sartorio" name="musculos[sartorio]" value="1">
-            <label class="form-check-label" for="sartorio">Sartorio</label>
-        </div>
-        
-        <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>
-</div>
+        </form>
+    </div>
+</section>
+<!-- BMI Calculator Section End -->
+<%- include('templates/toggleTheme')%>
 <%- include('templates/footer')%>
